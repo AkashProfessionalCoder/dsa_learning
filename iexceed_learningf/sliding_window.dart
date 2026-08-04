@@ -81,7 +81,9 @@ int maxSum(List<int> givenArray, int n) {
   for (int end = 0; end < givenArray.length; end++) {
     windowSum += givenArray[end];
     if (end - start + 1 == n) {
-     
+      if (start == 0) {
+        maxSum = windowSum;
+      }
       if (maxSum < windowSum) maxSum = windowSum;
       windowSum -= givenArray[start];
       start++;
